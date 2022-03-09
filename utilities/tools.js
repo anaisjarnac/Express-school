@@ -6,7 +6,7 @@ export const listErrors = (err) => {
     });
   err.code === 11000 &&
     Object.keys(err.keyPattern).map((key) => {
-      errors = { ...errors, [key]: `${key} existe déjà` };
+      errors = { ...errors, [key]: `C'est mort le nom ${key} existe déja mon pote` };
     });
 
   return errors;

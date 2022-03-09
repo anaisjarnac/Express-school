@@ -8,9 +8,7 @@ const WilderSchema = new Schema(
       type: String, 
       required: [true, "Le nom est requis!"],
       unique: true,
-      // unique: [true, "Ce nom est déja donné t es naz"],
     },
-    // name : String, // forme courte
     city: {
       type: String,
       required: [true, "La ville est requise!"],
@@ -23,6 +21,8 @@ const WilderSchema = new Schema(
     ],
   },
   { versionningKey: false }
+  // versionningKey: false : 
 );
 
-export default mongoose.model("Wilder", WilderSchema);
+export default mongoose.model("Wilder", WilderSchema); //ES6 type module
+// module.exports = mongoose.model("Wilder", WilderSchema) //ES5
