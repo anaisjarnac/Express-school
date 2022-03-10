@@ -8,7 +8,7 @@ import wilderRouter from "./routes/wilder";
 dotenv.config();
 
 const app = express();
-const PORT = 3000;
+const PORT = 3030;
 // on se connecte avec mongoose
 mongoose
   .connect(

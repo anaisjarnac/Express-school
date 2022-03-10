@@ -6,12 +6,13 @@ import { listErrors } from "./../utilities/tools";
 export default {
   create: (req, res, next) => {
     console.log("Créer un wilder!");
-    const { name, city, skills } = req.body;
+    const { name, city, description, skills } = req.body;
 
     WilderModel.init().then(() => {
       const wilder = new WilderModel({
         name,
         city,
+        description, 
         skills,
         //   name: name,
         //   city: city,
@@ -80,22 +81,22 @@ export default {
       .catch((err) => console.log("erreur", err));
   },
 
-  find: (req, res) => {
-    const { _id } = req.params;
-    WilderModel.findOne({ _id })
-      .then((result) => {
-        if (!result) {
-          return res.json({
-            success: false,
-            result: "Cet identifiant n'existe pas ",
-          });
-        }
-        res.json({ success: true, result });
-      })
-      .catch((err) => {
-        console.log(err);
-      });
-  },
+  // find: (req, res) => {
+  //   const { _id } = req.params;
+  //   WilderModel.findOne({ _id })
+  //     .then((result) => {
+  //       if (!result) {
+  //         return res.json({
+  //           success: false,
+  //           result: "Cet identifiant n'existe pas ",
+  //         });
+  //       }
+  //       res.json({ success: true, result });
+  //     })
+  //     .catch((err) => {
+  //       console.log(err);
+  //     });
+  // },
 
 };
 
